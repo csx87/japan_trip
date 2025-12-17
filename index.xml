@@ -12,20 +12,30 @@
       <title>Itinerary</title>
       <link>https://csx87.github.io/japan_trip/itinerary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>chaman.sureshbabu@gmail.com (csx87)</author>
-      <guid>https://csx87.github.io/japan_trip/itinerary/</guid><description>&lt;no value&gt;</description></item>
+      <guid>https://csx87.github.io/japan_trip/itinerary/</guid>
+        <media:content url="https://csx87.github.io/japan_trip/itinerary/itinerary_hu_e417bd1e4c67caf8.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;https://csx87.github.io/japan_trip/itinerary/itinerary_hu_e417bd1e4c67caf8.jpg&quot; /&gt;
+          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
+        </description></item>
     <item>
       <title>Bookings</title>
       <link>https://csx87.github.io/japan_trip/bookings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>chaman.sureshbabu@gmail.com (csx87)</author>
-      <guid>https://csx87.github.io/japan_trip/bookings/</guid><description>&lt;no value&gt;</description></item>
+      <guid>https://csx87.github.io/japan_trip/bookings/</guid>
+        <media:content url="https://csx87.github.io/japan_trip/bookings/bookings_hu_14b5964bf4d4c65a.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;https://csx87.github.io/japan_trip/bookings/bookings_hu_14b5964bf4d4c65a.jpg&quot; /&gt;
+          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
+        </description></item>
     <item>
       <title>Photos</title>
       <link>https://csx87.github.io/japan_trip/photos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>chaman.sureshbabu@gmail.com (csx87)</author>
       <guid>https://csx87.github.io/japan_trip/photos/</guid>
-        <media:content url="https://csx87.github.io/japan_trip/photos/frame_0001_hu_52b3b91ea5f74102.png" type="image/jpeg"/>
+        <media:content url="https://csx87.github.io/japan_trip/photos/tokyo-tower_hu_e106607d76964077.jpg" type="image/jpeg"/>
         <description>
-          &lt;img src=&quot;https://csx87.github.io/japan_trip/photos/frame_0001_hu_52b3b91ea5f74102.png&quot; /&gt;
+          &lt;img src=&quot;https://csx87.github.io/japan_trip/photos/tokyo-tower_hu_e106607d76964077.jpg&quot; /&gt;
           &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
         </description></item>
   </channel>
