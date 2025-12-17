@@ -47,6 +47,8 @@ jobs:
           rclone sync gdrive:photos content/photos \
             --drive-shared-with-me \
             --ignore-existing \
+            --exclude "tokyo-tower.jpg" \
+            --exclude "index.md" \
             --progress
 
       # ---------- COMMIT IF CHANGED ----------
