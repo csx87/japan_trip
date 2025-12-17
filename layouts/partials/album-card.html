@@ -1,0 +1,20 @@
+{{ $gallery := partial "get-gallery.html" . }}
+{{ with $gallery }}
+    {{ $url := .page.RelPermalink }}
+{{ with .page.Params.redirect }}
+  {{ $url = . }}
+{{ end }}
+
+    <a class="card"
+      href="{{ $url }}"
+      title="{{ .page.Title }}"
+      {{ with .page.Params.redirect }}target="_blank" rel="noopener"{{ end }}>
+
+    <figure style="background-color: {{ .color }}">
+      <img class="lazyload" width="{{ .thumbnail.Width }}" height="{{ .thumbnail.Height }}" data-src="{{ .thumbnail.RelPermalink }}" alt="{{ .page.Title }}" />
+    </figure>
+    <div>
+      <h2>{{ .page.Title }}</h2>
+    </div>
+  </a>
+{{ end }}
