@@ -5,13 +5,49 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
+      # ---------- RCLONE SETUP ----------
+      - name: Install rclone
+        run: sudo apt-get update && sudo apt-get install -y rclone
+
+      - name: Configure rclone (Google Drive)
+        run: |
+          mkdir -p ~/.config/rclone
+          echo "${{ secrets.RCLONE_GDRIVE_SA }}" > ~/.config/rclone/service_account.json
+          cat <<EOF > ~/.config/rclone/rclone.conf
+          [gdrive]
+          type = drive
+          scope = drive.readonly
+          service_account_file = ~/.config/rclone/service_account.json
+          EOF
+
+      - name: Sync Google Drive photos → Hugo content
+        run: |
+          mkdir -p content/photos
+          rclone sync gdrive:japan/photos content/photos \
+            --progress \
+            --ignore-existing
+
+      # ---------- COMMIT IF CHANGED ----------
+      - name: Commit new photos
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add content/photos
+          git diff --cached --quiet || git commit -m "Sync photos from Google Drive"
+          git push
+
+      # ---------- HUGO BUILD ----------
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -21,6 +57,7 @@ jobs:
       - name: Build
         run: hugo --cleanDestinationDir --gc
 
+      # ---------- DEPLOY ----------
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
