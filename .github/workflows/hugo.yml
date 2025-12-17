@@ -26,10 +26,9 @@ jobs:
           echo "${{ secrets.RCLONE_GDRIVE_SA }}" > ~/.config/rclone/service_account.json
           cat <<EOF > ~/.config/rclone/rclone.conf
           [gdrive]
-          type = drive
-          scope = drive.readonly
-          service_account_file = ~/.config/rclone/service_account.json
-          EOF
+          rclone sync gdrive:photos content/photos \
+          --drive-shared-with-me \
+          --ignore-existing
 
       - name: Sync Google Drive photos → Hugo content
         run: |
