@@ -4,7 +4,9 @@ enableRobotsTXT = true
 languageCode = "en"
 timeZone = "Europe/Berlin"
 timeout = "120s"
-title = "Gallery"
+title = "Japan Trip"
+baseURL = "https://csx87.github.io/japan-trip"
+
 
 [params]
   defaultTheme = "dark"
