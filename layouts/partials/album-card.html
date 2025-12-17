@@ -11,8 +11,15 @@
       {{ with .page.Params.redirect }}target="_blank" rel="noopener"{{ end }}>
 
     <figure style="background-color: {{ .color }}">
-      <img class="lazyload" width="{{ .thumbnail.Width }}" height="{{ .thumbnail.Height }}" data-src="{{ .thumbnail.RelPermalink }}" alt="{{ .page.Title }}" />
-    </figure>
+  <img
+    src="{{ .thumbnail.RelPermalink }}"
+    data-src="{{ .thumbnail.RelPermalink }}"
+    class="lazyload"
+    width="{{ .thumbnail.Width }}"
+    height="{{ .thumbnail.Height }}"
+    alt="{{ .page.Title }}" />
+</figure>
+
     <div>
       <h2>{{ .page.Title }}</h2>
     </div>
